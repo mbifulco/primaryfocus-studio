@@ -21,7 +21,7 @@ export default {
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
+      to: { type: 'author' },
     },
     {
       name: 'mainImage',
@@ -32,10 +32,10 @@ export default {
       },
     },
     {
-      name: 'categories',
-      title: 'Categories',
+      name: 'tags',
+      title: 'Tags',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [{ type: 'reference', to: { type: 'tag' } }],
     },
     {
       name: 'publishedAt',
@@ -43,9 +43,29 @@ export default {
       type: 'datetime',
     },
     {
+      name: 'youTubeId',
+      title: 'YouTube Id',
+      description:
+        'The ID from your YouTube video. It comes after v= in the Url, like https://www.youtube.com/watch?v=qDjrqLe71w8',
+      type: 'string',
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    },
+  ],
+
+  orderings: [
+    {
+      title: 'Publish date new–>old',
+      name: 'publishDateDesc',
+      by: [
+        {
+          field: 'publishedAt',
+          direction: 'desc',
+        },
+      ],
     },
   ],
 
@@ -56,10 +76,10 @@ export default {
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
+      const { author } = selection;
       return Object.assign({}, selection, {
         subtitle: author && `by ${author}`,
-      })
+      });
     },
   },
-}
+};

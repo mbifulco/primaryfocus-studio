@@ -1,6 +1,6 @@
 export default {
-  name: 'category',
-  title: 'Category',
+  name: 'tag',
+  title: 'Tag',
   type: 'document',
   fields: [
     {
@@ -9,9 +9,14 @@ export default {
       type: 'string',
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text',
     },
   ],
-}
+};
