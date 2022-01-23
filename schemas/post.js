@@ -50,8 +50,20 @@ export default {
       type: 'string',
     },
     {
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'string',
+      description:
+        'A short description of this article or video - try to keep it under 250 characters',
+    },
+    {
       name: 'body',
       title: 'Body',
+      type: 'blockContent',
+    },
+    {
+      name: 'transcript',
+      title: 'Transcript',
       type: 'blockContent',
     },
   ],
