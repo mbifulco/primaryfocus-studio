@@ -65,10 +65,14 @@ export default {
       options: { hotspot: true },
       fields: [
         {
+          title: 'Caption',
+          description: 'This will appear below the image',
           name: 'caption',
           type: 'string',
         },
         {
+          title: 'Alt Text',
+          description: 'This will appear if the image cannot be displayed',
           name: 'alt',
           type: 'string',
         },
