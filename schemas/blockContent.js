@@ -66,7 +66,7 @@ export default {
       fields: [
         {
           name: 'caption',
-          type: 'bodyImageCaption',
+          type: 'string',
         },
         {
           name: 'alt',
